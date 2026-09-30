@@ -3,10 +3,834 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu site</title>
+
+    <title>Chapa 1 | Valorização, Transparência e Inovação</title>
+
+    <meta name="description" content="Chapa 1 - Valorização, Transparência e Inovação. Eleições Coren-PR 2026.">
+
+    <style>
+        :root {
+            --verde-escuro: #064e3b;
+            --verde: #15803d;
+            --verde-limao: #a3e635;
+            --verde-menta: #a7f3d0;
+            --branco: #ffffff;
+            --cinza: #f3f7f5;
+            --texto: #1f2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--branco);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        header {
+            background: var(--verde-escuro);
+            color: var(--branco);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--branco);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .logo span {
+            color: var(--verde-limao);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--verde-limao);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(6, 78, 59, 0.98),
+                    rgba(21, 128, 61, 0.92)
+                );
+            color: var(--branco);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--verde-limao);
+            color: var(--verde-escuro);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--verde-limao);
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            font-weight: normal;
+            margin-bottom: 35px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            background: var(--verde-limao);
+            color: var(--verde-escuro);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background: var(--branco);
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            color: var(--verde-escuro);
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .section-title .line {
+            width: 70px;
+            height: 5px;
+            background: var(--verde-limao);
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        .section-title p {
+            margin-top: 15px;
+            color: #64748b;
+        }
+
+        /* =========================
+           CONHEÇA A CHAPA
+        ========================= */
+
+        #chapa {
+            background: var(--branco);
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .intro strong {
+            color: var(--verde);
+        }
+
+        .cards {
+            margin-top: 45px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--cinza);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 5px solid var(--verde);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            margin: auto auto 20px;
+            border-radius: 50%;
+            background: var(--verde-menta);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--verde-escuro);
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            color: var(--verde-escuro);
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           PROPOSTAS
+        ========================= */
+
+        #propostas {
+            background: var(--cinza);
+        }
+
+        .propostas-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .proposta {
+            background: var(--branco);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid var(--verde);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .proposta h3 {
+            color: var(--verde-escuro);
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .proposta p {
+            color: #475569;
+        }
+
+        /* =========================
+           APOIADORES
+        ========================= */
+
+        #apoiadores {
+            background: var(--branco);
+        }
+
+        .apoio-box {
+            background: var(--verde-escuro);
+            color: var(--branco);
+            border-radius: 20px;
+            padding: 55px 30px;
+            text-align: center;
+        }
+
+        .apoio-box h3 {
+            color: var(--verde-limao);
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .apoio-box p {
+            max-width: 700px;
+            margin: auto;
+            opacity: 0.95;
+        }
+
+        .apoiadores-lista {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .apoiador {
+            background: var(--verde-menta);
+            color: var(--verde-escuro);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           CONTATO
+        ========================= */
+
+        #contato {
+            background: var(--cinza);
+        }
+
+        .contato-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contato-info h3 {
+            color: var(--verde-escuro);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .contato-info p {
+            margin-bottom: 12px;
+        }
+
+        .contato-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contato-link {
+            background: var(--branco);
+            padding: 18px;
+            border-radius: 10px;
+            color: var(--verde-escuro);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contato-link:hover {
+            background: var(--verde-menta);
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background: var(--verde-escuro);
+            color: var(--branco);
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer strong {
+            color: var(--verde-limao);
+        }
+
+        footer p {
+            margin-top: 8px;
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 570px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .propostas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contato-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 18px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Meu site está funcionando!</h1>
-    <p>Publicado com GitHub Pages.</p>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+        <div class="nav-container">
+
+            <a href="#inicio" class="logo">
+                CHAPA <span>1</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#chapa">CONHEÇA A CHAPA 1</a>
+                    </li>
+
+                    <li>
+                        <a href="#propostas">PROPOSTAS</a>
+                    </li>
+
+                    <li>
+                        <a href="#apoiadores">APOIADORES</a>
+                    </li>
+
+                    <li>
+                        <a href="#contato">CONTATO</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- INÍCIO -->
+
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    ELEIÇÕES COREN-PR 2026
+                </div>
+
+                <h1>
+                    CHAPA <span>1</span>
+                </h1>
+
+                <h2>
+                    Valorização, Transparência e Inovação
+                </h2>
+
+                <p>
+                    Conheça a Chapa 1, nossas propostas,
+                    nossos apoiadores e nossos canais de contato.
+                </p>
+
+                <a href="#chapa" class="btn">
+                    CONHEÇA A CHAPA 1
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONHEÇA A CHAPA 1 -->
+
+        <section id="chapa">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>Conheça a Chapa 1</h2>
+
+                    <div class="line"></div>
+
+                    <p>
+                        Eleições Coren-PR 2026
+                    </p>
+
+                </div>
+
+                <div class="intro">
+
+                    <p>
+                        A <strong>Chapa 1 – Valorização, Transparência e Inovação</strong>
+                        apresenta sua composição e suas propostas para as
+                        Eleições Coren-PR 2026.
+                    </p>
+
+                    <p style="margin-top: 15px;">
+                        Aqui você poderá conhecer os integrantes da chapa,
+                        suas trajetórias e as informações relacionadas à
+                        candidatura.
+                    </p>
+
+                </div>
+
+
+                <!-- INTEGRANTES -->
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            01
+                        </div>
+
+                        <h3>
+                            Integrante 1
+                        </h3>
+
+                        <p>
+                            Nome e informações do integrante da Chapa 1.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            02
+                        </div>
+
+                        <h3>
+                            Integrante 2
+                        </h3>
+
+                        <p>
+                            Nome e informações do integrante da Chapa 1.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            03
+                        </div>
+
+                        <h3>
+                            Integrante 3
+                        </h3>
+
+                        <p>
+                            Nome e informações do integrante da Chapa 1.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROPOSTAS -->
+
+        <section id="propostas">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>Propostas</h2>
+
+                    <div class="line"></div>
+
+                    <p>
+                        Conheça as propostas da Chapa 1
+                    </p>
+
+                </div>
+
+
+                <div class="propostas-grid">
+
+                    <div class="proposta">
+
+                        <h3>
+                            Valorização
+                        </h3>
+
+                        <p>
+                            Insira aqui as propostas relacionadas à
+                            valorização profissional.
+                        </p>
+
+                    </div>
+
+
+                    <div class="proposta">
+
+                        <h3>
+                            Transparência
+                        </h3>
+
+                        <p>
+                            Insira aqui as propostas relacionadas à
+                            transparência e à participação.
+                        </p>
+
+                    </div>
+
+
+                    <div class="proposta">
+
+                        <h3>
+                            Inovação
+                        </h3>
+
+                        <p>
+                            Insira aqui as propostas relacionadas à
+                            inovação e à modernização.
+                        </p>
+
+                    </div>
+
+
+                    <div class="proposta">
+
+                        <h3>
+                            Gestão
+                        </h3>
+
+                        <p>
+                            Insira aqui as propostas relacionadas à
+                            gestão e ao funcionamento do Conselho.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- APOIADORES -->
+
+        <section id="apoiadores">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>Apoiadores</h2>
+
+                    <div class="line"></div>
+
+                    <p>
+                        Apoios à Chapa 1
+                    </p>
+
+                </div>
+
+
+                <div class="apoio-box">
+
+                    <h3>
+                        Apoiadores da Chapa 1
+                    </h3>
+
+                    <p>
+                        Espaço destinado à apresentação dos apoiadores
+                        e informações relacionadas aos apoios.
+                    </p>
+
+
+                    <div class="apoiadores-lista">
+
+                        <div class="apoiador">
+                            Apoiador 1
+                        </div>
+
+                        <div class="apoiador">
+                            Apoiador 2
+                        </div>
+
+                        <div class="apoiador">
+                            Apoiador 3
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTATO -->
+
+        <section id="contato">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>Contato</h2>
+
+                    <div class="line"></div>
+
+                    <p>
+                        Entre em contato com a Chapa 1
+                    </p>
+
+                </div>
+
+
+                <div class="contato-grid">
+
+                    <div class="contato-info">
+
+                        <h3>
+                            Fale conosco
+                        </h3>
+
+                        <p>
+                            Utilize nossos canais oficiais para
+                            acompanhar as informações da Chapa 1.
+                        </p>
+
+                        <p>
+                            <strong>Eleições Coren-PR 2026</strong>
+                        </p>
+
+                    </div>
+
+
+                    <div class="contato-links">
+
+                        <!-- SUBSTITUA OS LINKS ABAIXO -->
+
+                        <a href="#" class="contato-link">
+                            Instagram
+                        </a>
+
+                        <a href="#" class="contato-link">
+                            Facebook
+                        </a>
+
+                        <a href="#" class="contato-link">
+                            WhatsApp
+                        </a>
+
+                        <a href="mailto:seuemail@email.com"
+                           class="contato-link">
+                            E-mail
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+            <strong>CHAPA 1</strong> —
+            Valorização, Transparência e Inovação
+        </p>
+
+        <p>
+            Eleições Coren-PR 2026
+        </p>
+
+    </footer>
+
+
 </body>
 </html>
